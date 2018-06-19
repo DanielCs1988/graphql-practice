@@ -15,4 +15,8 @@ public class Query implements GraphQLRootResolver {
     public List<Link> allLinks() {
         return linkRepository.getAllLinks();
     }
+
+    public Link getLink(String id) {
+        return linkRepository.findById(id);
+    }
 }
