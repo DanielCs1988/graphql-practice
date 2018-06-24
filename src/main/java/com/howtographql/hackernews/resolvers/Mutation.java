@@ -1,6 +1,12 @@
-package com.howtographql.hackernews;
+package com.howtographql.hackernews.resolvers;
 
 import com.coxautodev.graphql.tools.GraphQLRootResolver;
+import com.howtographql.hackernews.models.AuthData;
+import com.howtographql.hackernews.models.Link;
+import com.howtographql.hackernews.models.SigninPayload;
+import com.howtographql.hackernews.models.User;
+import com.howtographql.hackernews.services.LinkRepository;
+import com.howtographql.hackernews.services.UserRepository;
 import graphql.GraphQLException;
 import graphql.schema.DataFetchingEnvironment;
 
@@ -27,7 +33,7 @@ public class Mutation implements GraphQLRootResolver {
 
     public SigninPayload signinUser(AuthData authData) throws IllegalAccessException {
         User user = userRepository.findByEmail(authData.getEmail());
-        if (user.getPassword().equals(authData.getPassword())) {
+        if (user != null && user.getPassword().equals(authData.getPassword())) {
             return new SigninPayload(user.getId(), user);
         }
         throw new GraphQLException("Invalid credentials!");

@@ -1,6 +1,10 @@
 package com.howtographql.hackernews;
 
 import com.coxautodev.graphql.tools.SchemaParser;
+import com.howtographql.hackernews.models.User;
+import com.howtographql.hackernews.resolvers.*;
+import com.howtographql.hackernews.services.LinkRepository;
+import com.howtographql.hackernews.services.UserRepository;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import graphql.ExceptionWhileDataFetching;

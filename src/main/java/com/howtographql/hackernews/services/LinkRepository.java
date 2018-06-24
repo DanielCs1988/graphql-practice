@@ -1,18 +1,16 @@
-package com.howtographql.hackernews;
+package com.howtographql.hackernews.services;
 
+import com.howtographql.hackernews.models.LinkFilter;
+import com.howtographql.hackernews.models.Link;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
-import static com.mongodb.client.model.Filters.and;
-import static com.mongodb.client.model.Filters.eq;
-import static com.mongodb.client.model.Filters.regex;
+import static com.mongodb.client.model.Filters.*;
 
 public class LinkRepository {
 

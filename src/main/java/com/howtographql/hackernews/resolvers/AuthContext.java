@@ -1,5 +1,6 @@
-package com.howtographql.hackernews;
+package com.howtographql.hackernews.resolvers;
 
+import com.howtographql.hackernews.models.User;
 import graphql.servlet.GraphQLContext;
 
 import javax.servlet.http.HttpServletRequest;
